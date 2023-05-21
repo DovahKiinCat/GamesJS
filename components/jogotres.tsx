@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 
 const options = ['pedra', 'papel', 'tesoura'];
 
@@ -29,24 +30,32 @@ const Jogo = () => {
 
     return (
         <section className='h-screen w-full bg-[#FDF7C3]'>
-            <h1>Jogo do Papel, Pedra e Tesoura</h1>
-            <section>
-                <p>Escolha uma opção:</p>
-                {options.map((option) => (
-                    <button key={option} onClick={() => handleUserChoice(option)}>
-                        <img src={`/${option}.png`} alt={option} />
-                    </button>
-                ))}
-            </section>
-            {userChoice && systemChoice && (
-                <section>
-                    <p>Você escolheu:</p>
-                    <img src={`/${userChoice}.png`} alt={userChoice} />
-                    <p>O sistema escolheu:</p>
-                    <img src={`/${systemChoice}.png`} alt={systemChoice} />
-                    <p>{result}</p>
+
+
+            <section className='flex flex-col h-screen justify-center items-center font-bold'>
+                <h1 className='font-bold text-3xl p-4'>Pedra Papel Tesoura</h1>
+
+                <section className='bg-black w-[300px] h-[5px] rounded-full'></section>
+
+                <section className='p-4 text-center text-2xl'>
+                    <p>Escolha uma opção:</p>
+                    {options.map((option) => (
+                        <button key={option} onClick={() => handleUserChoice(option)}>
+                            <Image src={`/images/${option}.png`} alt={option} width="50" height="50"/>
+                        </button>
+                    ))}
                 </section>
-            )}
+                
+                {userChoice && systemChoice && (
+                    <section className='text-center text-2xl'>
+                        <p>Você escolheu</p>
+                        <Image className='mx-auto' src={`/images/${userChoice}.png`} alt={userChoice} width="50" height="50"/>
+                        <p>O sistema escolheu</p>
+                        <Image className='mx-auto' src={`/images/${systemChoice}.png`} alt={systemChoice} width="50" height="50"/>
+                        <p className='text-3xl'>{result}</p>
+                    </section>
+                )}
+            </section>
         </section>
     );
 };
