@@ -5,7 +5,7 @@ const ParOuImpar = () => {
     const [userNumber, setUserNumber] = useState('');
     const [result, setResult] = useState('');
 
-    const handleFormSubmit = (event: { preventDefault: () => void; }) => {
+    const handleFormSubmit = (event) => {
         event.preventDefault();
 
         const systemNumber = Math.floor(Math.random() * 11);
@@ -15,7 +15,9 @@ const ParOuImpar = () => {
 
         const parsedUserNumber = parseInt(userNumber);
 
-        const userWins = (isUserChoiceEven && isSystemChoiceEven) || (!isUserChoiceEven && !isSystemChoiceEven);
+        const isSumEven = (parsedUserNumber + systemNumber) % 2 === 0;
+
+        const userWins = (isSumEven && isUserChoiceEven) || (!isSumEven && !isUserChoiceEven);
         const systemWins = !userWins;
 
         if (userWins) {
@@ -29,28 +31,27 @@ const ParOuImpar = () => {
 
     return (
         <section className='h-screen w-full bg-[#FFDEB4]'>
-
             <section className='flex flex-col justify-center align-center items-center h-screen'>
-
                 <h1 className='font-bold text-3xl p-4'>Jogo de Par ou Ímpar</h1>
-
                 <section className='bg-black w-[300px] h-[5px] rounded-full'>
                     <span className='p-4'></span>
                 </section>
-
                 <section className='font-bold'>
                     <form onSubmit={handleFormSubmit}>
-                        <label className='flex flex-col text-center py-4'>
+                        <label className='flex flex-col text-center py-4 text-2xl'>
                             Escolha Par (P) ou Ímpar (I)
-                            <input
+                            <select
                                 className='rounded-2xl p-2'
-                                type="text"
                                 value={userChoice}
-                                onChange={(e) => setUserChoice(e.target.value.toUpperCase())}
-                            />
+                                onChange={(e) => setUserChoice(e.target.value)}
+                            >
+                                <option value="">Selecione</option>
+                                <option value="P">Par</option>
+                                <option value="I">Ímpar</option>
+                            </select>
                         </label>
                         <br />
-                        <label className='flex flex-col text-center'>
+                        <label className='flex flex-col text-center text-2xl'>
                             Digite um número
                             <input
                                 className='rounded-2xl p-2'
@@ -64,7 +65,6 @@ const ParOuImpar = () => {
                         </section>
                     </form>
                 </section>
-
                 <p className='font-bold text-3xl'>{result}</p>
             </section>
         </section>
