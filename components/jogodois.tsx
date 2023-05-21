@@ -5,7 +5,7 @@ const ParOuImpar = () => {
     const [userNumber, setUserNumber] = useState('');
     const [result, setResult] = useState('');
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = (event: { preventDefault: () => void; }) => {
         event.preventDefault();
 
         const systemNumber = Math.floor(Math.random() * 11);

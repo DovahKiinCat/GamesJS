@@ -4,7 +4,7 @@ const options = ['pedra', 'papel', 'tesoura'];
 
 const Jogo = () => {
     const [userChoice, setUserChoice] = useState('');
-    const [systemChoice, setSystemChoice] = useState('');
+    const [systemChoice, setSystemChoice] = useState<string | undefined>(undefined);
     const [result, setResult] = useState('');
 
     const handleUserChoice = (choice: string) => {

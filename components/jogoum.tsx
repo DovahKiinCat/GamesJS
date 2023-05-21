@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { SetStateAction, useState } from 'react';
 
 function SorteioMegaSena() {
     const [numerosSorteados, setNumerosSorteados] = useState<number[]>([]);
 
     const realizarSorteio = () => {
-        const numeros = [];
+        const numeros: SetStateAction<number[]> = [];
         while (numeros.length < 6) {
             const numero = getRandomNumber(1, 60);
             if (!numeros.includes(numero)) {
