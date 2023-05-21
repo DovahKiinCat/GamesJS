@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
 
 const ParOuImpar = () => {
     const [userChoice, setUserChoice] = useState('');
     const [userNumber, setUserNumber] = useState('');
     const [result, setResult] = useState('');
 
-    const handleFormSubmit = (event) => {
+    const handleFormSubmit = (event: FormEvent) => {
         event.preventDefault();
 
         const systemNumber = Math.floor(Math.random() * 11);
@@ -39,7 +39,7 @@ const ParOuImpar = () => {
                 <section className='font-bold'>
                     <form onSubmit={handleFormSubmit}>
                         <label className='flex flex-col text-center py-4 text-2xl'>
-                            Escolha Par (P) ou Ímpar (I)
+                            Escolha Par ou Ímpar
                             <select
                                 className='rounded-2xl p-2'
                                 value={userChoice}
