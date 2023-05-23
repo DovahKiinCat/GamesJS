@@ -10,7 +10,7 @@ export default function Homepage() {
                 <section className='p-4 flex h-screen justify-center'>
                     <section className='bg-white/30 backdrop-blur-sm fixed flex w-[80%] h-16 items-center rounded-full'>
                         <section className='fixed flex flex-col justify-center w-full'>
-                            <section className='px-6 font-bold'>
+                            <section className='px-6 font-bold md:w-auto h-auto'>
                                 <Typewriter
                                     options={{
                                         strings: ['Clique para Jogar!'],
