@@ -29,7 +29,7 @@ const Jogo = () => {
     };
 
     return (
-        <section className='h-screen w-full bg-[#FDF7C3]'>
+        <section className='h-screen w-full bg-[#FDF7C3]' id='jogotres'>
 
 
             <section className='flex flex-col h-screen justify-center items-center font-bold'>

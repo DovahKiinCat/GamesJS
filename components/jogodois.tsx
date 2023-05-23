@@ -30,7 +30,7 @@ const ParOuImpar = () => {
     };
 
     return (
-        <section className='h-screen w-full bg-[#FFDEB4]'>
+        <section className='h-screen w-full bg-[#FFDEB4]' id='jogodois'>
             <section className='flex flex-col justify-center align-center items-center h-screen'>
                 <h1 className='font-bold text-3xl p-4'>Jogo de Par ou Ímpar</h1>
                 <section className='bg-black w-[300px] h-[5px] rounded-full'>
