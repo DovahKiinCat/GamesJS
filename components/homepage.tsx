@@ -8,19 +8,8 @@ export default function Homepage() {
             <section className="h-screen bg-[#FEA1A1]">
 
                 <section className='p-4 flex h-screen justify-center'>
-                    <section className='bg-white/30 backdrop-blur-sm fixed flex w-[80%] h-16 items-center rounded-full'>
+                    <section className='bg-gray-300/30 backdrop-blur-sm fixed flex w-[80%] h-16 items-center rounded-full shadow-xl '>
                         <section className='fixed flex flex-col justify-center w-full'>
-                            <section className='px-6 font-bold md:w-auto h-auto'>
-                                <Typewriter
-                                    options={{
-                                        strings: ['Clique para Jogar!'],
-                                        autoStart: true,
-                                        loop: true,
-                                        
-                                    }}
-                                />
-                            </section>
-                            
                             <section className='flex justify-center items-center gap-16 w-full absolute'>
                                 <section className='absolute' />
 
